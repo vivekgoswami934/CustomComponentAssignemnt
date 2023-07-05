@@ -3,12 +3,12 @@ import SampleList from "./Components/SampleList";
 function App() {
   return (
     <div className="App">
-      <h2>Simple list</h2>
+      <h2 className="Title">Simple list</h2>
       <SampleList  />
 
 
       <h2>Basic List with Avatar & Timeline</h2>
-      <SampleList data={basicList2} loadMore={true} />
+      <SampleList data={basicList2} loadMore={true} limit = {2} />
 
 
       <h2>Basic List with Pagination</h2>
@@ -19,6 +19,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

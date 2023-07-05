@@ -1,12 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { styled } from "styled-components";
 
-const SampleList = ({  data = sampleListData,limit = 3, loadMore, pagination,}) => {
+const SampleList = ({
+  data = sampleListData,
+  limit = 3,
+  loadMore,
+  pagination,
+}) => {
   const [length, setLength] = useState(1);
   const [showData, setShowData] = useState(data);
+  const [visible, setVisible] = useState(true);
+
+  const scrollToRef = useRef();
 
   const handleChange = () => {
     if (length * limit <= data.length) setLength((p) => p + 1);
+
+    scrollToRef.current.scrollIntoView({ behavior: "smooth" });
+
+    setVisible(length * limit <= data.length);
   };
 
   useEffect(() => {
@@ -39,11 +51,9 @@ const SampleList = ({  data = sampleListData,limit = 3, loadMore, pagination,}) 
       </Component>
       {loadMore && data.length > 3 && (
         <ButtonWrapper>
-          <Button
-            onClick={handleChange}
-            disabled={length * limit >= data.length}
-          >
-            Load More
+          <Button ref={scrollToRef} onClick={handleChange} disabled={!visible}>
+            {" "}
+            Load More{" "}
           </Button>
         </ButtonWrapper>
       )}
@@ -100,7 +110,7 @@ const BottomElement = styled.div`
   justify-content: center;
   color: var(--text-dark, #2f3446);
   font-size: 0.8125rem;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.1875rem;
@@ -110,7 +120,7 @@ const BottomElement = styled.div`
 const Typography = styled.div`
   color: var(--text-dark, #2f3446);
   font-size: 0.8125rem;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 500;
   line-height: 1.125rem;
@@ -130,7 +140,7 @@ const LogoWrapper = styled.div`
 const DateTypography = styled.div`
   color: var(--text-inactive, #a1aab3);
   font-size: 0.75rem;
-  font-family: Roboto;
+  font-family: "Roboto", sans-serif;
   font-style: normal;
   font-weight: 400;
   line-height: 1.0625rem;
