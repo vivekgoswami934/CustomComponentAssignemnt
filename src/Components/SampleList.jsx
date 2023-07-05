@@ -6,19 +6,17 @@ const SampleList = ({
   limit = 3,
   loadMore,
   pagination,
+  heading
 }) => {
   const [length, setLength] = useState(1);
   const [showData, setShowData] = useState(data);
   const [visible, setVisible] = useState(true);
-
   const scrollToRef = useRef();
 
   const handleChange = () => {
     if (length * limit <= data.length) setLength((p) => p + 1);
 
     scrollToRef.current.scrollIntoView({ behavior: "smooth" });
-
-    setVisible(length * limit <= data.length);
   };
 
   useEffect(() => {
@@ -30,8 +28,15 @@ const SampleList = ({
     }
   }, [length]);
 
+  useEffect(() => {
+    const thresholdValue = length * limit <= data.length;
+
+    if (!thresholdValue) setVisible(thresholdValue);
+  }, [showData]);
+
   return (
     <>
+      <Heading>{heading}</Heading>
       <Component>
         {showData?.map((el, i) => (
           <Wrapper key={i}>
@@ -52,8 +57,7 @@ const SampleList = ({
       {loadMore && data.length > 3 && (
         <ButtonWrapper>
           <Button ref={scrollToRef} onClick={handleChange} disabled={!visible}>
-            {" "}
-            Load More{" "}
+            Load More
           </Button>
         </ButtonWrapper>
       )}
@@ -66,6 +70,16 @@ const SampleList = ({
 };
 
 export default SampleList;
+
+const Heading = styled.p`
+  color: var(--text-dark, #2f3446);
+  font-size: 1.8125rem;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-family: "Roboto", sans-serif;
+`;
 
 const LogoImg = styled.img`
   object-fit: cover;

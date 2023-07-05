@@ -3,16 +3,16 @@ import SampleList from "./Components/SampleList";
 function App() {
   return (
     <div className="App">
-      <h2 className="Title">Simple list</h2>
-      <SampleList  />
+      {/* <h2 className="Title">Simple list</h2> */}
+      <SampleList heading="Simple List"  />
 
 
-      <h2>Basic List with Avatar & Timeline</h2>
-      <SampleList data={basicList2} loadMore={true} limit = {2} />
+      {/* <h2>Basic List with Avatar & Timeline</h2> */}
+      <SampleList data={basicList2} loadMore={true} limit = {4} heading={"Basic List with Avatar & Timeline"} />
 
 
-      <h2>Basic List with Pagination</h2>
-      <SampleList data={basicList} pagination={true} />
+      {/* <h2>Basic List with Pagination</h2> */}
+      <SampleList data={basicList} pagination={true} heading="Basic List with Pagination" />
 
     </div>
   );
