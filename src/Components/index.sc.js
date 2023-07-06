@@ -46,24 +46,25 @@ export const Heading = styled.p`
 
 export const Component = styled.div`
   display: flex;
-  /* width: 75.625rem; */
-  width: 100%;
+  width: 99%;
   flex-direction: column;
   align-items: flex-start;
   border-radius: 0.1875rem;
   border: 1px solid var(--grey-background, #f2f6fa);
   background-color: var(--white-100, #fff);
-`;
+  overflow: hidden;
+  `;
 
 export const Wrapper = styled.div`
   display: flex;
-  width: 95%;
+  min-width: 100%;
   padding: 0.875rem;
   flex-direction: column;
   align-items: flex-start;
   /* gap: 0.875rem; */
   border-radius: 0.1875rem;
   border: 1px solid var(--grey-background, #f2f6fa);
+ 
   `;
 
 export const TopElement = styled.div`
@@ -74,10 +75,11 @@ export const TopElement = styled.div`
 
 export const BottomElement = styled.div`
   display: flex;
-  padding-left: 0px;
-  align-items: flex-start;
-  align-self: stretch;
+  /* padding-left: 0px; */
+  /* align-items: flex-start; */
+  /* align-self: stretch; */
   background: var(--white-100, #fff);
+  width: 90%;
 `;
 
 export const BottomElementText = styled.p`
@@ -149,11 +151,5 @@ export const Button = styled.button`
 `;
 
 export const PaginationWrapper = styled.div`
-  display: flex;
-  /* width: 13.875rem; */
-  width: 100%;
-  align-items: center;
-  gap: 0.875rem;
-  justify-content: flex-end;
-  margin-top: 1rem;
+  
 `;

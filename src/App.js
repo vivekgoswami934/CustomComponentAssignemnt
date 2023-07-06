@@ -4,7 +4,7 @@ import "./App.css"
 
 function App() {
   return (
-    <div className="App">
+    <>
       {/* <h2 className="Title">Simple list</h2> */}
       <SampleList heading="Simple List" data={sampleListData} />
 
@@ -16,7 +16,7 @@ function App() {
       {/* <h2>Basic List with Pagination</h2> */}
       <SampleList data={basicList} pagination={true} heading="Basic List with Pagination" />
 
-    </div>
+    </>
   );
 }
 
