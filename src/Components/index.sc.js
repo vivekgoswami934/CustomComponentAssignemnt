@@ -151,5 +151,11 @@ export const Button = styled.button`
 `;
 
 export const PaginationWrapper = styled.div`
-  
+   display: flex;
+  /* width: 13.875rem; */
+  width: 100%;
+  align-items: center;
+  gap: 0.875rem;
+  justify-content: flex-end;
+  margin-top: 1rem;
 `;
