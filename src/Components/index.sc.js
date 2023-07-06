@@ -46,8 +46,10 @@ export const Heading = styled.p`
 
 export const Component = styled.div`
   display: flex;
-  width: 99%;
+  width: 100%;
+  /* max-width: 75.625rem; */
   flex-direction: column;
+  gap: 0.375rem;
   align-items: flex-start;
   border-radius: 0.1875rem;
   border: 1px solid var(--grey-background, #f2f6fa);
@@ -90,6 +92,8 @@ export const BottomElementText = styled.p`
   font-weight: 400;
   line-height: 1.1875rem;
   padding: 0px 2.12rem;
+  max-width : 65.625rem;
+
   background: var(--white-100, #fff);
 `;
 

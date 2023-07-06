@@ -1,7 +1,7 @@
 export const sampleListData = [
     {
         title: "Name Title 1",
-        src: "",
+        // src: "",
     },
     {
         title: "PName Title 2",
