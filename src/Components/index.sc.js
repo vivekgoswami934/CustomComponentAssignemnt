@@ -57,8 +57,7 @@ export const Component = styled.div`
 
 export const Wrapper = styled.div`
   display: flex;
-  /* width: 74.625rem; */
-  width: 98%;
+  width: 95%;
   padding: 0.875rem;
   flex-direction: column;
   align-items: flex-start;
