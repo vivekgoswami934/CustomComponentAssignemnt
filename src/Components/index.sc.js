@@ -49,7 +49,7 @@ export const Component = styled.div`
   width: 100%;
   /* max-width: 75.625rem; */
   flex-direction: column;
-  gap: 0.375rem;
+  /* gap: 0.375rem; */
   align-items: flex-start;
   border-radius: 0.1875rem;
   border: 1px solid var(--grey-background, #f2f6fa);
